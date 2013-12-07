@@ -12,7 +12,8 @@ package org.freehep.graphics2d.font;
 public class Lookup {
     private static Lookup instance;
 
-    private CharTable[] tables;
+    private int ntables = 8;
+    private CharTable[] tables = new CharTable[ntables];
 
     public static Lookup getInstance() {
         if (instance == null) {
@@ -21,19 +22,15 @@ public class Lookup {
         return (instance);
     }
 
-    private int ntables = 8;
-
     private Lookup() {
-        tables = new CharTable[ntables];
-        tables[0] = new Symbol();
+        /*tables[0] = new Symbol();
         tables[1] = new Expert();
         tables[2] = new Zapfdingbats();
         tables[3] = new STDLatin();
         tables[4] = new MACLatin();
         tables[5] = new WINLatin();
         tables[6] = new PDFLatin();
-        tables[7] = new ISOLatin();
-
+        tables[7] = new ISOLatin();*/
     }
 
     /**

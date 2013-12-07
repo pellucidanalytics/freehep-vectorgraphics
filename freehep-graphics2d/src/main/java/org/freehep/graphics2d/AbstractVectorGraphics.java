@@ -96,7 +96,7 @@ public abstract class AbstractVectorGraphics extends VectorGraphics {
         properties.setProperties(defaults);
     }
 
-    protected Properties getProperties() {
+    public Properties getProperties() {
         return properties;
     }
 

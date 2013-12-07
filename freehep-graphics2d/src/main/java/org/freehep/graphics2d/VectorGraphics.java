@@ -69,7 +69,7 @@ public abstract class VectorGraphics extends Graphics2D implements
 
     protected abstract void initProperties(Properties defaults);
 
-    protected abstract Properties getProperties();
+    public abstract Properties getProperties();
 
     public abstract String getProperty(String key);
 
