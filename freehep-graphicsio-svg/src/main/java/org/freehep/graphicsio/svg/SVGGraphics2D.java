@@ -1073,7 +1073,10 @@ public class SVGGraphics2D extends AbstractVectorGraphicsIO {
 
     private float alphaColor(Paint p) {
         if (p instanceof Color) {
-            return (float) (getPrintColor((Color) p).getAlpha() / 255.0);
+            String alpha = getProperty("alpha");
+            float styleTransparency = alpha == null ? 1.0f : Float.parseFloat(alpha);
+            float paintTransparency = (float) (getPrintColor((Color) p).getAlpha() / 255.0);
+            return styleTransparency * paintTransparency;
         } else if (p instanceof GradientPaint) {
             return 1.0f;
         } else if (p instanceof TexturePaint) {
